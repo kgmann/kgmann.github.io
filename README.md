@@ -1,0 +1,3 @@
+# Welcome to my personal website
+
+Hello fellow human/bot. I'm Luc Atakpa and I'm passionate about machine learning. This page is pretty empty for now...
