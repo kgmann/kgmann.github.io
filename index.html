@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Luc Atakpa's Personal Website">
     <meta name="author" content="Luc Atakpa">
-    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
     <link rel="icon" type="image/png" href="assets/images/machine-learning.png"/>
     
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
@@ -25,6 +24,11 @@
 
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        html, body {
+            height: 100%;
+        }
+    </style>
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBXYPJWFM2"></script>
@@ -37,7 +41,7 @@
     </script>
 </head> 
 
-<body>
+<body class="container-fluid d-flex flex-column">
     <!-- ******HEADER****** --> 
     <header class="header">
         <div class="container">     
@@ -64,13 +68,13 @@
 							<label class="custom-control-label" for="darkSwitch">Dark Mode</label>
 						</div>
 			        </div><!--//dark-mode-switch-->
-	                <a class="btn btn-success" href="mailto:lucatakpa+dev@gmail.com"><i class="fas fa-paper-plane"></i> Contact Me</a>        
+	                <a class="btn btn-success" href="/apps/"><i class="fab fa-app-store-ios"></i> My Apps </a>
 	            </div><!--//col-->
 	        </div><!--//row-->         
         </div><!--//container-->
     </header><!--//header-->
     
-    <div class="container sections-wrapper py-5">
+    <div class="container flex-grow-1 sections-wrapper py-5">
         <div class="row">
             <div class="primary col-lg-8 col-12">
                 <section class="about section">
@@ -78,7 +82,7 @@
                         <h2 class="heading">About Me</h2>
                         <div class="content">
                             <p>
-                                Hey 👋🏾 I'm Luc Atakpa, a software and machine learning engineer. 
+                                Hey 👋🏾 I'm Luc, a software and machine learning engineer. 
                                 I have hands-on experience building backend applications and machine learning / deep learning models for various use cases in Speech Recognition, Natural Language Processing, and Computer Vision. 
                                 I value efficiency when writing programs, and applying best practices to ensure high code quality. 
                                 <br>
@@ -180,7 +184,7 @@
                         <h2 class="heading">Skills</h2>
                         <div class="content">
                             <p class="intro">
-                                Here are some of the tools and technologies that I have used so far in my career.
+                                Here are some of the tools and technologies that I have used so far.
                             </p>
 
                             <div>
@@ -204,7 +208,7 @@
                                     Web Backend
                                 </p>
                                 <p>
-                                    Express, Flask
+                                    Express, Flask, Gradio
                                 </p>
                             </div>
                             <div>
@@ -266,15 +270,23 @@
                         <h2 class="heading">Hobbies and Interests</h2>
                         <div class="content">
                             <ul class="list-unstyled">
-                                <li><i class="fas fa-futbol"></i><a href="#">Playing Football</a></li>
-                                <li><i class="fas fa-music"></i><a href="#">Listening to music (mainly rap)</a></li>
-                                <li><i class="fas fa-gamepad"></i><a href="#">Playing video games</a></li>
-                                <li><i class="fas fa-pencil"></i><a href="#">Drawing (currently awful at it)</a></li>
-                                <li><i class="fas fa-magnifying-glass"></i><a href="#">Trying new things</a></li>
+                                <li><i class="fas fa-futbol"></i><span> Playing Football</span></li>
+                                <li><i class="fas fa-music"></i><span> Listening to music (mainly rap)</span></li>
+                                <li><i class="fas fa-gamepad"></i><span>Playing video games</a></li>
+                                <li><i class="fas fa-pencil"></i><span> Drawing (currently awful at it)</span></li>
+                                <li><i class="fas fa-magnifying-glass"></i><span> Trying new things</span></li>
                             </ul>
                         </div><!--//content-->
                     </div><!--//section-inner-->
-                </aside>
+                </aside> <!--//section-->
+
+                <aside class="skills aside section">
+                    <div class="section-inner shadow-sm rounded">
+                        <div class="d-grid gap-2">
+                            <a class="btn btn-success btn-block" href="mailto:lucatakpa+dev@gmail.com"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->
                                 
             </div><!--//secondary-->    
         </div><!--//row-->
@@ -288,14 +300,12 @@
         </div><!--//container-->
     </footer><!--//footer-->
  
-    <!-- Javascript -->          
+    <!-- General Javascript -->        
     <script type="text/javascript" src="assets/plugins/popper.min.js"></script> 
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
-    <script type="text/javascript" src="assets/plugins/vanilla-rss/dist/rss.global.min.js"></script> 
     <script type="text/javascript" src="assets/plugins/dark-mode-switch/dark-mode-switch.min.js"></script> 
-    <!-- github calendar plugin -->
+    <!-- Page specific JS -->
     <script type="text/javascript" src="assets/plugins/github-calendar/dist/github-calendar.min.js"></script>
-    <!-- custom js -->
     <script type="text/javascript" src="assets/js/main.js"></script>            
 </body>
 </html> 
