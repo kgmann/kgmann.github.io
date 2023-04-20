@@ -1,10 +1,5 @@
 ---
 
 ### dictionary
-- name: Cat vs Dog classifier
-  link: catordog.html
-  description: >
-    This is a small image classifier for cats and dogs.
-  tags: ["Computer Vision, Image Classification"]
 
 ...
