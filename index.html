@@ -1,312 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Luc Portfolio</title>
-    <!-- Meta -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Luc Atakpa's Personal Website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Luc Atakpa is a machine learning engineer and founder building AI products and full-stack systems.">
     <meta name="author" content="Luc Atakpa">
-    <link rel="icon" type="image/png" href="assets/images/machine-learning.png"/>
-    
-    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
-    
-    <!-- FontAwesome JS -->
-    <script defer src="assets/fontawesome/js/all.js"></script>
-    
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">  
-    
-    <!-- github calendar css -->
-    <link rel="stylesheet" href="assets/plugins/github-calendar/dist/github-calendar-responsive.css">
-
-    <!-- Theme CSS -->  
-    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <meta property="og:title" content="Luc Atakpa">
+    <meta property="og:description" content="Machine learning engineer building AI products and full-stack systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lucatakpa.com/">
+    <title>Luc Atakpa</title>
+    <link rel="icon" type="image/png" href="assets/images/machine-learning.png">
     <style>
-        html, body {
-            height: 100%;
+        :root {
+            color-scheme: light;
+            --bg: #f4f6f7;
+            --text: #181714;
+            --muted: #67625a;
+            --line: #d1d9d7;
+            --accent: #1f6b58;
+            --accent-dark: #164d3f;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            min-height: 100%;
+            background: var(--bg);
+        }
+
+        body {
+            min-height: 100%;
+            margin: 0;
+            color: var(--text);
+            background:
+                linear-gradient(90deg, rgba(31, 107, 88, 0.08) 1px, transparent 1px),
+                linear-gradient(180deg, rgba(31, 107, 88, 0.06) 1px, transparent 1px),
+                var(--bg);
+            background-size: 56px 56px;
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.55;
+            letter-spacing: 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.18em;
+        }
+
+        a:hover {
+            color: var(--accent-dark);
+        }
+
+        .page {
+            width: min(1120px, calc(100% - 40px));
+            min-height: 100svh;
+            margin: 0 auto;
+            padding: 24px 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            padding-bottom: 14px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .brand {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 16px;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+            gap: clamp(36px, 8vw, 112px);
+            align-items: end;
+            padding: 10px 0 30px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        h1 {
+            max-width: 820px;
+            margin: 0;
+            font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+            font-size: clamp(3.05rem, 6.1vw, 5.75rem);
+            line-height: 0.9;
+            font-weight: 500;
+            letter-spacing: 0;
+        }
+
+        .intro {
+            max-width: 680px;
+            margin: 16px 0 0;
+            color: var(--muted);
+            font-size: clamp(1.12rem, 1.6vw, 1.32rem);
+            line-height: 1.42;
+        }
+
+        .panel {
+            padding: 0 0 6px;
+        }
+
+        .panel p {
+            margin: 0 0 22px;
+            color: var(--muted);
+            font-size: 1.02rem;
+        }
+
+        .links {
+            display: grid;
+            gap: 10px;
+        }
+
+        .button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 42px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--text);
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 160ms ease, border-color 160ms ease, transform 160ms ease;
+        }
+
+        .button:hover {
+            color: var(--accent-dark);
+            border-color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .button span:last-child {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        .section {
+            display: grid;
+            grid-template-columns: 210px minmax(0, 1fr);
+            gap: clamp(28px, 7vw, 96px);
+            padding: 31px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        h2 {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.86rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .work-list {
+            display: grid;
+            gap: 16px;
+        }
+
+        .work-item {
+            display: grid;
+            grid-template-columns: minmax(160px, 230px) minmax(0, 1fr);
+            gap: 28px;
+        }
+
+        .work-item h3 {
+            margin: 0;
+            font-size: clamp(1.08rem, 1.55vw, 1.35rem);
+            line-height: 1.18;
+            letter-spacing: 0;
+        }
+
+        .meta {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .work-item p {
+            margin: 0;
+            color: var(--muted);
+            max-width: 690px;
+            font-size: 0.98rem;
+        }
+
+        .compact {
+            max-width: 720px;
+            margin: 0;
+            color: var(--muted);
+            font-size: clamp(1rem, 1.35vw, 1.12rem);
+        }
+
+        .stack {
+            display: grid;
+            gap: 14px;
+        }
+
+        .email-action {
+            border: 0;
+            margin: 0;
+            padding: 0;
+            color: inherit;
+            background: transparent;
+            cursor: pointer;
+            font: inherit;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 0.18em;
+        }
+
+        .email-action:hover {
+            color: var(--accent-dark);
+        }
+
+        @media (max-width: 760px) {
+            .page {
+                width: min(100% - 28px, 680px);
+                padding-top: 24px;
+            }
+
+            header,
+            .page {
+                padding-top: 24px;
+            }
+
+            header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: flex-start;
+            }
+
+            .hero,
+            .section,
+            .work-item {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                gap: 34px;
+                padding: 34px 0 46px;
+            }
+
+            h1 {
+                font-size: clamp(3.6rem, 18vw, 6.8rem);
+            }
+
+            .section {
+                padding: 36px 0;
+            }
         }
     </style>
-    
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BBXYPJWFM2"></script>
-        <script>
+    <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-BBXYPJWFM2');
     </script>
-</head> 
+    <script>
+        function emailLuc() {
+            const user = 'lucatakpa';
+            const domain = 'gmail.com';
+            window.location.href = `mailto:${user}@${domain}`;
+        }
+    </script>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="brand">Luc Atakpa</div>
+            <nav aria-label="Primary links">
+                <a href="https://panelweaver.com/?utm_source=lucatakpa.com&amp;utm_medium=website">PanelWeaver</a>
+                <a href="https://github.com/kgmann">GitHub</a>
+                <a href="https://www.linkedin.com/in/lucgermannatakpa/">LinkedIn</a>
+                <button class="email-action" type="button" onclick="emailLuc()">Email</button>
+            </nav>
+        </header>
 
-<body class="container-fluid d-flex flex-column">
-    <!-- ******HEADER****** --> 
-    <header class="header">
-        <div class="container">     
-	        <div class="row align-items-center">
-			    <div class="col">         
-		            <img class="profile-image img-fluid float-start rounded-circle" src="assets/images/profile.png" alt="profile image" />
-		            <div class="profile-content">
-		                <h1 class="name">Luc Atakpa</h1>
-		                <h2 class="desc">Software / Machine Learning Engineer</h2>  
-                        <p>I am open to freelancing or full time remote opportunities</p> 
-		                <ul class="social list-inline">
-                            <li class="list-inline-item"><a href="https://stackoverflow.com/users/10537101/luc-g-atakpa" target="_blank"><i class="fab fa-stack-overflow"></i></a></li>
-                            <li class="list-inline-item"><a href="https://github.com/kgmann" target="_blank"><i class="fab fa-github-alt"></i></a></li>
-		                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/lucgermannatakpa/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li class="list-inline-item"><a href="https://twitter.com/luc_germann" target="_blank"><i class="fab fa-twitter"></i></a></li>
-		                    <li class="list-inline-item last-item"><a href="https://www.kaggle.com/gatakpa" target="_blank"><i class="fab fa-kaggle"></i></a></li>                
-		                </ul> 
-		            </div><!--//profile-->
-			    </div><!--//col-->
-	            <div class="col-12 col-md-auto">
-		            <div class="dark-mode-switch d-flex">
-						<div class="form-check form-switch mx-auto mx-md-0">
-							<input type="checkbox" class="form-check-input me-2" id="darkSwitch" />
-							<label class="custom-control-label" for="darkSwitch">Dark Mode</label>
-						</div>
-			        </div><!--//dark-mode-switch-->
-	                <a class="btn btn-success" href="/apps/"><i class="fab fa-app-store-ios"></i> My Apps </a>
-	            </div><!--//col-->
-	        </div><!--//row-->         
-        </div><!--//container-->
-    </header><!--//header-->
-    
-    <div class="container flex-grow-1 sections-wrapper py-5">
-        <div class="row">
-            <div class="primary col-lg-8 col-12">
-                <section class="about section">
-                    <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">About Me</h2>
-                        <div class="content">
-                            <p>
-                                Hey 👋🏾 I'm Luc, a software and machine learning engineer. 
-                                I have hands-on experience building backend applications and machine learning / deep learning models for various use cases in Speech Recognition, Natural Language Processing, and Computer Vision. 
-                                I value efficiency when writing programs, and applying best practices to ensure high code quality. 
-                                <br>
-                                I enjoy writing computer programs, building machine learning models from scratch to deepen my understanding of the underlying algorithms, and also applying them with high-level libraries to real-world data. 
-                                I like sharpening my skills and working in friendly environments, on interesting/impactful projects.
-                            </p>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->                 
-                </section><!--//section-->
+        <main>
+            <section class="hero" aria-labelledby="intro-title">
+                <div>
+                    <h1 id="intro-title">Machine learning engineer.</h1>
+                    <p class="intro">
+                        I build AI products end to end, from training and adapting models to shipping full-stack production systems.
+                    </p>
+                </div>
+                <div class="panel" aria-label="Featured links">
+                    <p>PanelWeaver is a platform for creating personalized comic books on demand in minutes, with optional physical print ordering. I am currently focused on growth.</p>
+                    <div class="links">
+                        <a class="button" href="https://panelweaver.com/?utm_source=lucatakpa.com&amp;utm_medium=website">
+                            <span>View PanelWeaver</span>
+                            <span aria-hidden="true">-></span>
+                        </a>
+                        <a class="button" href="https://github.com/kgmann">
+                            <span>GitHub</span>
+                            <span aria-hidden="true">-></span>
+                        </a>
+                        <a class="button" href="https://www.linkedin.com/in/lucgermannatakpa/">
+                            <span>LinkedIn</span>
+                            <span aria-hidden="true">-></span>
+                        </a>
+                    </div>
+                </div>
+            </section>
 
-                <section class="experience section">
-                    <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Work Experience</h2>
-                        <div class="content">
-                            <div class="item">
-                                <h3 class="title"> Research Associate - <span class="place"><a href="https://www.africa.engineering.cmu.edu/research/cylab/index.html">CyLab-Africa</a></span> <span class="year">(2022 - Present)</span></h3>
-                                <p>
-                                    Created programming materials for a "Probabilistic Graphical Models" course and expected to work on machine learning projects at CyLab-Africa.
-                                </p>
-                            </div><!--//item-->
-                            
-                            <div class="item">
-                                <h3 class="title">Data scientist (Part time) - <span class="place"><a href="https://www.vida.place/">VIDA</a></span> <span class="year">(2022)</span></h3>
-                                <p>Explored new geospatial datasets to assess the insights that can be extracted from them and the value that they could add to the company's customers.</p>
-                            </div><!--//item-->
+            <section class="section" aria-labelledby="work-title">
+                <h2 id="work-title">Selected Work</h2>
+                <div class="work-list">
+                    <article class="work-item">
+                        <div>
+                            <h3>Founder</h3>
+                            <div class="meta">PanelWeaver, 2025 - Present</div>
+                        </div>
+                        <p>
+                            Designed, built and operated the full-stack app, async task queue,
+                            fault-tolerant AI orchestration harness, print workflow, and deployment pipeline;
+                            owned technical, product, and business decisions.
+                        </p>
+                    </article>
 
-                            <div class="item">
-                                <h3 class="title">Data Science Intern - <span class="place"><a href="https://www.vida.place/">VIDA</a></span> <span class="year">(2021)</span></h3>
-                                <p>Wrote processing scripts for geospatial data with Geopandas. Converted Jupyter notebooks into command line interface scripts, 
-                                    and used ClearML to log and track experiments. Made database change management easier by creating and maintaining database 
-                                    schema migrations with alembic.
-                                </p>
-                            </div><!--//item-->
+                    <article class="work-item">
+                        <div>
+                            <h3>Machine Learning Research Engineer</h3>
+                            <div class="meta">Medium Biosciences, 2024 - 2025</div>
+                        </div>
+                        <p>
+                            Trained and fine-tuned protein language, folding, and inverse-folding models for
+                            antibody and protein engineering tasks.
+                        </p>
+                    </article>
 
-                            <div class="item">
-                                <h3 class="title">Software Engineer - <span class="place"><a href="https://www.linkedin.com/company/mify/">MIFY</a></span> <span class="year">(2019 - 2020)</span></h3>
-                                <p> Built a proof of concept for a speech recognition system for a local language in Benin named Fon, and deployed it on Google Cloud
-                                    Platform. I also maintained the company's website.
-                                </p>
-                            </div><!--//item-->
+                    <article class="work-item">
+                        <div>
+                            <h3>Software Engineer</h3>
+                            <div class="meta">Machine Intelligence For You Inc, 2019 - 2020</div>
+                        </div>
+                        <p>
+                            Built and deployed a proof-of-concept speech recognition system for Fon,
+                            a local language in Benin, using Kaldi, Pykaldi, and Google Cloud Platform.
+                        </p>
+                    </article>
+                </div>
+            </section>
 
-                            <div class="item">
-                                <h3 class="title">Software Developer Intern - <span class="place"><a href="https://lrsia.ifri-uac.bj/">Laboratoire de Recherche en Sciences Informatique et Applications</a></span> <span class="year">(2018)</span></h3>
-                                <p> Added a set of features to a grading system for an online test platform for students. The system is based on the open source project
-                                    <a href="https://github.com/UCL-INGI/INGInious">INGInious</a>. 
-                                </p>
-                            </div><!--//item-->
-                            
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                 
-                </section><!--//section-->
-
-                <section class="experience section">
-                    <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Some Projects</h2>
-                        <div class="content">
-                            <div class="item">
-                                <h3 class="title"><span>Web Mapping Application</span> <span class="badge badge-theme">Web App</span></h3>
-                                <p class="summary">Developed a web mapping application for a surveyor's company. It allows them to visualize spatial data in a Web browser, query the
-                                    data and get building footprints' attributes on the interactive map.</p>
-                                <p>Tools: <i>Express.js, PostGIS, Geoserver, Leaflet.js</i></p>
-                                <p><a class="more-link" href="https://bitbucket.org/luc_/webmap_parakou/src/master/" target="_blank"><i class="fas fa-external-link-alt"></i>Code Draft</a></p>
-                            </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title"><span>Extreme Multi-Domain, Multi-Task Learning With Transformers</span> <span class="badge badge-theme">Research Paper</span></h3>
-                                <p class="summary">
-                                    Researched “Extreme Multi-Domain, Multi-Task Learning With Unified Text-to-Text Transfer Transformers” with a team. The main 
-                                    goal of the research was to assess how the multi-task learning paradigm with the unified text-to-text transfer transformer (T5) 
-                                    extends beyond natural language tasks into extremely different domains like playing chess and generating code, and how to better 
-                                    adapt it to multi-domain learning.
-                                </p>
-                                <p><a class="more-link" href="https://arxiv.org/abs/2209.10106" target="_blank"><i class="fas fa-external-link-alt"></i>Check the Paper</a></p>
-                            </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title"><span>Speech Recognition for Fon</span> <span class="badge badge-theme">Web App</span></h3>
-                                <p class="summary">
-                                    Built a proof of concept for a speech recognition system for a local language in Benin named Fon, and deployed it on Google Cloud Platform.
-                                    The system was developed using the open source tools <a href="https://github.com/kaldi-asr/kaldi">Kaldi</a>, <a href="https://github.com/pykaldi/pykaldi">Pykaldi</a> 
-                                    and a public dataset available <a href="https://github.com/besacier/ALFFA_PUBLIC/tree/master/ASR/FONGBE">here</a>. 
-                                </p>
-                                <p><a class="more-link" href="https://github.com/kgmann/visage_asr" target="_blank"><i class="fas fa-external-link-alt"></i>Code Draft</a></p>
-                            </div><!--//item-->
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                 
-                </section><!--//section-->
-                
-                <section class="github section">
-                    <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">My GitHub</h2>                        
-                        <div id="github-graph" class="github-graph">
-                        </div><!--//github-graph-->
-
-                    </div><!--//secton-inner-->
-                </section><!--//section-->
-            </div><!--//primary-->
-            <div class="secondary col-lg-4 col-12">
-                <aside class="skills aside section">
-                    <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Skills</h2>
-                        <div class="content">
-                            <p class="intro">
-                                Here are some of the tools and technologies that I have used so far.
-                            </p>
-
-                            <div>
-                                <p class="lead fw-bold">
-                                    Programming Languages
-                                </p>
-                                <p>
-                                    Python, JavaScript, C/C++, Java
-                                </p>
-                            </div>
-                            <div>
-                                <p class=" lead fw-bold">
-                                    ML technologies
-                                </p>
-                                <p>
-                                    PyTorch, OpenCV, Scikit-learn
-                                </p>
-                            </div>
-                            <div>
-                                <p class="lead fw-bold">
-                                    Web Backend
-                                </p>
-                                <p>
-                                    Express, Flask, Gradio
-                                </p>
-                            </div>
-                            <div>
-                                <p class="lead fw-bold">
-                                    Databases
-                                </p>
-                                <p>
-                                    SQLite, MySQL, PostgreSQL, MongoDB
-                                </p>
-                            </div>
-                            <div>
-                                <p class="lead fw-bold">
-                                    Others
-                                </p>
-                                <p>
-                                    Git, Linux, Docker, CircleCI
-                                </p>
-                            </div>
-                        </div><!--//content-->  
-                    </div><!--//section-inner-->                 
-                </aside><!--//section-->
-                
-                <aside class="education aside section">
-                    <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Education</h2>
-                        <div class="content">
-                            <div class="item">                      
-                                <h3 class="title"><i class="fas fa-graduation-cap"></i> MSc Information Technology </h3>
-                                <h4 class="university">Carnegie Mellon University <span class="year">(2020-2022)</span></h4>
-                            </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title"><i class="fas fa-graduation-cap"></i> BSc Sofware Engineering </h3>
-                                <h4 class="university">University of Abomey-Calavi <span class="year">(2015-2019)</span></h4>
-                            </div><!--//item-->
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-                            
-                <aside class="languages aside section">
-                    <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Languages</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li class="item">
-                                    <span class="title"><strong>English:</strong></span>
-                                    <span class="level">Professional Proficiency <br class="visible-xs"/><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="far fa-star"></i> </span>
-                                </li><!--//item-->
-                                <li class="item">
-                                    <span class="title"><strong>French:</strong></span>
-                                    <span class="level">Bilingual Proficiency <br class="visible-sm visible-xs"/><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half"></i> </span>
-                                </li><!--//item-->
-                            </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-
-                <aside class="list hobbies aside section">
-                    <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Hobbies and Interests</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-futbol"></i><span> Playing Football</span></li>
-                                <li><i class="fas fa-music"></i><span> Listening to music (mainly rap)</span></li>
-                                <li><i class="fas fa-gamepad"></i><span>Playing video games</a></li>
-                                <li><i class="fas fa-pencil"></i><span> Drawing (currently awful at it)</span></li>
-                                <li><i class="fas fa-magnifying-glass"></i><span> Trying new things</span></li>
-                            </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside> <!--//section-->
-
-                <aside class="skills aside section">
-                    <div class="section-inner shadow-sm rounded">
-                        <div class="d-grid gap-2">
-                            <a class="btn btn-success btn-block" href="mailto:lucatakpa+dev@gmail.com"><i class="fas fa-paper-plane"></i> Contact Me</a>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-                                
-            </div><!--//secondary-->    
-        </div><!--//row-->
-    </div><!--//masonry-->
-    
-    <!-- ******FOOTER****** --> 
-    <footer class="footer">
-        <div class="container text-center">
-                <!--/* This template is free as long as you keep the attribution link below. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
-                <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
-        </div><!--//container-->
-    </footer><!--//footer-->
- 
-    <!-- General Javascript -->        
-    <script type="text/javascript" src="assets/plugins/popper.min.js"></script> 
-    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
-    <script type="text/javascript" src="assets/plugins/dark-mode-switch/dark-mode-switch.min.js"></script> 
-    <!-- Page specific JS -->
-    <script type="text/javascript" src="assets/plugins/github-calendar/dist/github-calendar.min.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>            
+            <section class="section" aria-labelledby="background-title">
+                <h2 id="background-title">Background</h2>
+                <div class="stack">
+                    <p class="compact">
+                        MS in Information Technology with a Machine Learning focus from Carnegie Mellon University.
+                    </p>
+                    <p class="compact">
+                        Reach me at <button class="email-action" type="button" onclick="emailLuc()">lucatakpa [at] gmail [dot] com</button>.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
-</html> 
-
+</html>
